@@ -1,0 +1,31 @@
+
+
+= Learning Websocket
+
+== Todo List
+
+* [ ] WebSocket 历史及其现状
+* [ ] WebSocket 历史及其现状
+* [ ] WebSocket 历史及其现状
+* [ ] WebSocket 历史及其现状
+* [ ] WebSocket 推送技术在企业信息化/数字化系统中的应用场景
+* [ ] WebSocket 行业中的实践方案
+
+
+素材：
+博客：
+https://www.ruanyifeng.com/blog/2017/05/websocket.html[WebSocket教程-阮一峰]
+
+. 通俗易懂地介绍了Websocket技术
+. 介绍了一个WebSocket服务器：Websocketd，最大特点是可以执行脚本（不限语言），将脚本输出推送至客户端
+. 介绍了GoEasy WebSocket 消息推送服务，一个免费的，即建即用的Websocket服务
+行业方案
+
+https://www.infoq.cn/article/3WpGbP2NEvgjzoWZbLHx[爱奇艺：构建通用 WebSocket 推送网关的设计与实践]
+
+
+
+
+
+
+
