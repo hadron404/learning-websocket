@@ -4,25 +4,57 @@
 
 == Todo List
 
-* [ ] WebSocket 历史及其现状
-* [ ] WebSocket 历史及其现状
-* [ ] WebSocket 历史及其现状
-* [ ] WebSocket 历史及其现状
+* [ ] WebSocket 发展历史及其现状
+* [ ] WebSocket 常见实现方案
+. 基于原生 Java 实现
+. 基于 Spring 实现
+. 基于 SpringBoot 实现
+. 基于 Netty 实现
+. 前端集成 WebSocket
+* [ ] WebSocket 服务的测试与运维（部署、监控及告警）
+* [ ] WebSocket 服务的高可靠、高可用、高性能实践
 * [ ] WebSocket 推送技术在企业信息化/数字化系统中的应用场景
-* [ ] WebSocket 行业中的实践方案
+* [ ] WebSocket 工业级实践方案
 
 
 素材：
 博客：
+
+https://blog.csdn.net/An1090239782/article/details/107173448[基于Netty的高性能WebSocket服务器实现方案-netty-websocket-spring-boot-starter]
+
+. 使用 netty-websocket-spring-boot-starter快速构建基于Netty的Websocket服务
+. 介绍 netty-websocket-spring-boot-starter 相关API
+
+https://www.knowledgehut.com/blog/web-development/what-is-websocket[What are webSockets and How does it work]
+
+. Websocket是什么以及应用在哪些场景中
+. Websocket 是怎样工作的？以及缺点
+. 何时应用Websocket以及在实时通信考虑使用Websocket的理由
+. HTTP和WebSocket连接的区别以及如何保护Websocket API
+
 https://www.ruanyifeng.com/blog/2017/05/websocket.html[WebSocket教程-阮一峰]
 
 . 通俗易懂地介绍了Websocket技术
 . 介绍了一个WebSocket服务器：Websocketd，最大特点是可以执行脚本（不限语言），将脚本输出推送至客户端
 . 介绍了GoEasy WebSocket 消息推送服务，一个免费的，即建即用的Websocket服务
-行业方案
+
+https://blog.csdn.net/weixin_33701564/article/details/91762103[高并发测试Websocket脚本]
+
+. 基于Python实现的并发测试脚本
+
+https://blog.csdn.net/vicky_lov/article/details/86569981[基于JMeter-WebsocketSampler的性能测试]
+
+. 介绍了Websocket性能测试场景
+. 如何使用jmeter-websocketSampler进行性能测试
+
+行业方案：
 
 https://www.infoq.cn/article/3WpGbP2NEvgjzoWZbLHx[爱奇艺：构建通用 WebSocket 推送网关的设计与实践]
 
+. 介绍了爱奇艺号WebSocket使用现状
+. 分析了通用长连接网关在爱奇艺的实现必要性，介绍了设计方案与技术选型分析
+. 介绍了长连接网关系统架构、会话管理、监控与报警以及性能压测
+. 介绍了长连接网关实现后在爱奇艺业务场景应用的案例及效果
 
 
 
