@@ -5,6 +5,7 @@
 == Todo List
 
 * [ ] WebSocket 发展历史及其现状
+. RFC 6455 协议文档
 * [ ] WebSocket 常见实现方案
 . 基于原生 Java 实现
 . 基于 Spring 实现
@@ -19,6 +20,7 @@
 
 素材：
 博客：
+https://sunyunqiang.com/blog/websocket_protocol_rfc6455/[Websocket RFC 6455 协议解析]
 
 https://blog.csdn.net/An1090239782/article/details/107173448[基于Netty的高性能WebSocket服务器实现方案-netty-websocket-spring-boot-starter]
 
@@ -34,7 +36,7 @@ https://www.knowledgehut.com/blog/web-development/what-is-websocket[What are web
 
 https://www.ruanyifeng.com/blog/2017/05/websocket.html[WebSocket教程-阮一峰]
 
-. 通俗易懂地介绍了Websocket技术
+. 通俗易懂地介绍了Websocket技术、为什么需要Websocket
 . 介绍了一个WebSocket服务器：Websocketd，最大特点是可以执行脚本（不限语言），将脚本输出推送至客户端
 . 介绍了GoEasy WebSocket 消息推送服务，一个免费的，即建即用的Websocket服务
 

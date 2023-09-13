@@ -1,0 +1,40 @@
+
+WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection.
+
+* 计算机通信协议
+* 单个TCP连接上的全双工通信
+* OSI 模型 的第7层应用层
+
+
+
+
+Websocket 协议的特点
+
+* 建立在TCP协议之上，服务端实现容易
+* 与HTTP协议有着良好的兼容性
+** 握手阶段通过HTTP GET 请求进行协议升级
+** 默认端口80和443
+** 能通过各种HTTP代理服务器
+* 数据格式轻量，性能开销小，通信高效
+* 数据格式支持二进制（binary）和文本（text）
+* 没有同源限制，客户端可以与任意服务器通信
+
+https://en.wikipedia.org/wiki/WebSocket
+
+HTTP 协议的特点
+
+* 单向通信
+* 基于请求响应模式
+* 半双工
+* 无状态
+
+
+Websocket的运行机制（RFC协议中有详细说明）
+
+. 握手：按照特定HTTP报文，向服务端发送GET请求，以确定服务端是否支持Websocket协议
+.. 服务端若支持WebSocket协议，则同意握手，返回101 Switching Protocols并按照特定HTTP报文返回
+. 数据传输：握手成功后，即可以frame为单位传输数据
+.. WebSocket掩码算法：对于frame的payload部分必须使用掩码覆盖以避免代理缓存污染攻击
+.. WebSocket消息分片：消息过长时或消息是实时产生的不可预测其长度，客户端可进行消息分片，构建成一个frame即可发送至服务端
+.. 控制类Frame：Close、Ping、Pong
+. 挥手（Closing Handshake）
