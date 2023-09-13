@@ -45,6 +45,9 @@ https://blog.csdn.net/weixin_33701564/article/details/91762103[高并发测试We
 https://blog.csdn.net/vicky_lov/article/details/86569981[基于JMeter-WebsocketSampler的性能测试]
 
 . 介绍了Websocket性能测试场景
+.. 大量连接的创建和关闭——不断模拟大量用户对Websocket连接的创建、关闭过程
+.. 长时间保持大量连接——创建大量连接、保持连接较长实践
+.. 大量推送消息——可以少量连接较长时间保持，不断触发消息推送
 . 如何使用jmeter-websocketSampler进行性能测试
 
 行业方案：
