@@ -20,6 +20,11 @@
 
 素材：
 博客：
+https://www.cnblogs.com/kiwifly/p/11729304.html[Spring boot 集成 websocket 的四种方式 ]
+https://www.baeldung.com/java-websockets[Java API 构建 WebSocket 指南]
+
+https://www.javainuse.com/spring/boot-websocket[使用SpringBoot构建一个Websocket应用]
+
 https://sunyunqiang.com/blog/websocket_protocol_rfc6455/[Websocket RFC 6455 协议解析]
 
 https://blog.csdn.net/An1090239782/article/details/107173448[基于Netty的高性能WebSocket服务器实现方案-netty-websocket-spring-boot-starter]
