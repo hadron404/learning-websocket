@@ -1,0 +1,6 @@
+rootProject.name = 'learning-websocket'
+
+
+//include 'integration'
+include 'integration:native'
+

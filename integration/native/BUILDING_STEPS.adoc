@@ -1,0 +1,32 @@
+
+WebSocket 服务端应用构建
+
+. 编写 ServerEndPoint
+** 注解式：@ServerEndPoint
+** 编程式: 继承 `jakarta.websocket.Endpoint`
+. 编写Message Encoder 和 Decoder
+
+
+WebSocket 客户端应用构建
+
+* 基于Java语言构建
+.. 编写 ClientEndPoint
+* 基于Javascript语言构建
+* 基于Python构建
+
+
+https://blogs.oracle.com/javamagazine/post/how-to-build-applications-with-the-websocket-api-for-java-ee-and-jakarta-ee[How to build applications with the WebSocket API for Java EE and Jakarta EE]
+
+* 使用Jakarta-EE构建WebSocket应用
+* 介绍了注解式和编程式构建
+* @ServerEndpoint、@ClientEndpoint、@OnOpen、@OnMessage、@OnClose、@OnError注解详细解释
+* 案例实践：使用WebSocket构建一个聊天应用
+* 旧版本构建教程：https://www.baeldung.com/java-websockets[Java API 构建 WebSocket 指南]
+
+
+https://eclipse-ee4j.github.io/tyrus-project.github.io/documentation/latest/index/index.html
+[Tyrus 2.1.3 User Guide]
+
+
+https://docs.oracle.com/en/java/javase/15/docs/api/java.net.http/java/net/http/WebSocket.html[WebSocket interface in JDK 15]
+
