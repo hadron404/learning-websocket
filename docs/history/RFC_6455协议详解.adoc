@@ -1,1 +1,2 @@
 https://datatracker.ietf.org/doc/html/rfc6455
+https://sunyunqiang.com/blog/websocket_protocol_rfc6455/[Websocket RFC 6455 协议解析]

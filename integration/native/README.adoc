@@ -5,6 +5,9 @@
 测试
 
 
+
+素材：
+https://rieckpil.de/create-real-time-applications-with-jakarta-ee-websocket/
 https://github.com/rieckpil/blog-tutorials/blob/master/websockets-with-jakarta-ee/README.md
 
 * 原生部署方案

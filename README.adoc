@@ -20,30 +20,22 @@
 
 素材：
 博客：
+
+https://www.baeldung.com/java-enterprise-evolution[Java EE vs J2EE vs Jakarta EE]
+https://blog.csdn.net/zl1zl2zl3/article/details/86030331[【译】Java EE vs J2EE vs Jakarta EE]
+
 https://www.cnblogs.com/kiwifly/p/11729304.html[Spring boot 集成 websocket 的四种方式 ]
-https://www.baeldung.com/java-websockets[Java API 构建 WebSocket 指南]
+
 
 https://www.javainuse.com/spring/boot-websocket[使用SpringBoot构建一个Websocket应用]
 
-https://sunyunqiang.com/blog/websocket_protocol_rfc6455/[Websocket RFC 6455 协议解析]
+
 
 https://blog.csdn.net/An1090239782/article/details/107173448[基于Netty的高性能WebSocket服务器实现方案-netty-websocket-spring-boot-starter]
 
 . 使用 netty-websocket-spring-boot-starter快速构建基于Netty的Websocket服务
 . 介绍 netty-websocket-spring-boot-starter 相关API
 
-https://www.knowledgehut.com/blog/web-development/what-is-websocket[What are webSockets and How does it work]
-
-. Websocket是什么以及应用在哪些场景中
-. Websocket 是怎样工作的？以及缺点
-. 何时应用Websocket以及在实时通信考虑使用Websocket的理由
-. HTTP和WebSocket连接的区别以及如何保护Websocket API
-
-https://www.ruanyifeng.com/blog/2017/05/websocket.html[WebSocket教程-阮一峰]
-
-. 通俗易懂地介绍了Websocket技术、为什么需要Websocket
-. 介绍了一个WebSocket服务器：Websocketd，最大特点是可以执行脚本（不限语言），将脚本输出推送至客户端
-. 介绍了GoEasy WebSocket 消息推送服务，一个免费的，即建即用的Websocket服务
 
 https://blog.csdn.net/weixin_33701564/article/details/91762103[高并发测试Websocket脚本]
 

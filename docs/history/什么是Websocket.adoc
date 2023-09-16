@@ -38,3 +38,17 @@ Websocket的运行机制（RFC协议中有详细说明）
 .. WebSocket消息分片：消息过长时或消息是实时产生的不可预测其长度，客户端可进行消息分片，构建成一个frame即可发送至服务端
 .. 控制类Frame：Close、Ping、Pong
 . 挥手（Closing Handshake）
+
+
+https://www.knowledgehut.com/blog/web-development/what-is-websocket[What are webSockets and How does it work]
+
+. Websocket是什么以及应用在哪些场景中
+. Websocket 是怎样工作的？以及缺点
+. 何时应用Websocket以及在实时通信考虑使用Websocket的理由
+. HTTP和WebSocket连接的区别以及如何保护Websocket API
+
+https://www.ruanyifeng.com/blog/2017/05/websocket.html[WebSocket教程-阮一峰]
+
+. 通俗易懂地介绍了Websocket技术、为什么需要Websocket
+. 介绍了一个WebSocket服务器：Websocketd，最大特点是可以执行脚本（不限语言），将脚本输出推送至客户端
+. 介绍了GoEasy WebSocket 消息推送服务，一个免费的，即建即用的Websocket服务
