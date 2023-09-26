@@ -1,0 +1,15 @@
+
+素材
+
+
+
+
+https://docs.spring.io/spring-framework/reference/web/webflux-websocket.html#webflux-websocket-server
+
+* Spring 文档
+* Spring 中实现基于Reactive-Stack的WebSocket服务
+
+
+https://www.javainuse.com/spring/boot-websocket[使用SpringBoot构建一个Websocket应用]
+
+
