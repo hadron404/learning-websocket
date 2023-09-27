@@ -4,6 +4,7 @@ import org.springframework.web.reactive.socket.WebSocketHandler;
 import org.springframework.web.reactive.socket.WebSocketSession;
 import reactor.core.publisher.Mono;
 
+@WSRequestMapping("/text")// if use auto-registry configuration use this annotation
 public class InboundHandler implements WebSocketHandler {
 
 	@Override

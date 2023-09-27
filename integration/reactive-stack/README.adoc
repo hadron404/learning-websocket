@@ -1,7 +1,15 @@
 
 
+基于注解实现Websocket Handler 自动注册
+
+* 实现一个注解，提供自定义Url
+* 提供一个注解处理类，将所有拥有该注解的实现类作为websocket handler 注册
+
+
 https://docs.spring.io/spring-framework/reference/web/webflux-websocket.html#webflux-websocket-server
 
 * Spring 文档
 * Spring 中实现基于Reactive-Stack的WebSocket服务
 * 使用 WebFlux 实现，本地使用在线网址测试时无需考虑跨域请求问题
+
+
