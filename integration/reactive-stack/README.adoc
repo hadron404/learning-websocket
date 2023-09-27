@@ -1,0 +1,7 @@
+
+
+https://docs.spring.io/spring-framework/reference/web/webflux-websocket.html#webflux-websocket-server
+
+* Spring 文档
+* Spring 中实现基于Reactive-Stack的WebSocket服务
+* 使用 WebFlux 实现，本地使用在线网址测试时无需考虑跨域请求问题
