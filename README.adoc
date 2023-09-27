@@ -21,13 +21,15 @@
 素材：
 博客：
 
+
 https://www.baeldung.com/java-enterprise-evolution[Java EE vs J2EE vs Jakarta EE]
 https://blog.csdn.net/zl1zl2zl3/article/details/86030331[【译】Java EE vs J2EE vs Jakarta EE]
 
 https://www.cnblogs.com/kiwifly/p/11729304.html[Spring boot 集成 websocket 的四种方式 ]
-
-
-https://www.javainuse.com/spring/boot-websocket[使用SpringBoot构建一个Websocket应用]
+* 原生
+* SpringBoot
+* TIO
+* STOMP
 
 
 
@@ -35,6 +37,7 @@ https://blog.csdn.net/An1090239782/article/details/107173448[基于Netty的高�
 
 . 使用 netty-websocket-spring-boot-starter快速构建基于Netty的Websocket服务
 . 介绍 netty-websocket-spring-boot-starter 相关API
+
 
 
 https://blog.csdn.net/weixin_33701564/article/details/91762103[高并发测试Websocket脚本]
@@ -59,7 +62,8 @@ https://www.infoq.cn/article/3WpGbP2NEvgjzoWZbLHx[爱奇艺：构建通用 WebSo
 . 介绍了长连接网关实现后在爱奇艺业务场景应用的案例及效果
 
 
-
+https://www.infoq.cn/article/9lp0pYfij3bUxmHDXkxl[【译】Slack 的实时消息处理架构]
+https://slack.engineering/real-time-messaging/[Real-time Messaging At Slack]
 
 
 

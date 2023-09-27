@@ -2,14 +2,18 @@
 素材
 
 
-
-
-https://docs.spring.io/spring-framework/reference/web/webflux-websocket.html#webflux-websocket-server
+https://docs.spring.io/spring-framework/reference/web/websocket/server.html
 
 * Spring 文档
-* Spring 中实现基于Reactive-Stack的WebSocket服务
-
+* Spring 中实现基于Servlet-Stack的WebSocket服务
+* 在线测试时需要考虑跨域问题
 
 https://www.javainuse.com/spring/boot-websocket[使用SpringBoot构建一个Websocket应用]
 
 
+https://github.com/spring-guides
+
+
+http://wstool.js.org/[WebSocket 在线测试工具]
+
+* 需要考虑跨域问题
