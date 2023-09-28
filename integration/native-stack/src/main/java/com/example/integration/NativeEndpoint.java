@@ -11,7 +11,7 @@ import jakarta.websocket.server.ServerEndpoint;
  */
 // @ServerEndPoint annotation to specify that a class is used as a WebSocket server endpoint
 @ServerEndpoint(value = "/echo")
-public class EchoEndpointAnnotated {
+public class NativeEndpoint {
 
 	@OnMessage
 	public String onMessage(String message, Session session) {
