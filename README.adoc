@@ -32,14 +32,6 @@ https://www.cnblogs.com/kiwifly/p/11729304.html[Spring boot 集成 websocket 的
 * STOMP
 
 
-
-https://blog.csdn.net/An1090239782/article/details/107173448[基于Netty的高性能WebSocket服务器实现方案-netty-websocket-spring-boot-starter]
-
-. 使用 netty-websocket-spring-boot-starter快速构建基于Netty的Websocket服务
-. 介绍 netty-websocket-spring-boot-starter 相关API
-
-
-
 https://blog.csdn.net/weixin_33701564/article/details/91762103[高并发测试Websocket脚本]
 
 . 基于Python实现的并发测试脚本

@@ -1,0 +1,11 @@
+
+
+https://waylau.com/netty-4-user-guide/[Netty 4.x User Guide《Netty 4.x 用户指南》/《Netty 原理解析与开发实战》]
+
+https://dongzl.github.io/netty-handbook/#/_content/chapter01[Netty 学习手册]
+
+
+https://juejin.cn/post/7030777971472826404[Springboot 整合 Netty 实现 Websocket 应用]
+
+
+https://blog.csdn.net/ooaash/article/details/118186450[Springboot 整合 Netty 实现 Websocket 应用]

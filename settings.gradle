@@ -4,4 +4,5 @@ rootProject.name = 'learning-websocket'
 include 'integration:native-stack'
 include 'integration:servlet-stack'
 include 'integration:reactive-stack'
+include 'integration:netty-stack'
 
