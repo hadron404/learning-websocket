@@ -4,7 +4,7 @@ import org.springframework.web.reactive.socket.WebSocketHandler;
 import org.springframework.web.reactive.socket.WebSocketSession;
 import reactor.core.publisher.Mono;
 
-@WSRequestMapping("/anno")
+@ServerEndPoint("/anno")
 public class AnnotatedHandler implements WebSocketHandler {
 
 	@Override

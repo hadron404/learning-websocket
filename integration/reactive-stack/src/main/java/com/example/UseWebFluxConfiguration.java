@@ -30,20 +30,20 @@ public class UseWebFluxConfiguration extends ApplicationObjectSupport {
 	}
 
 	/**
-	 * 基于注解 {@link WSRequestMapping} 自动配置 Websocket Endpoint
+	 * 基于注解 {@link ServerEndPoint} 自动配置 Websocket Endpoint
 	 */
 	@Bean
 	public HandlerMapping annotatedHandlerMapping() {
 		final Map<String, WebSocketHandler> urlMap = new LinkedHashMap<>();
-		Map<String, Object> beanMap = obtainApplicationContext().getBeansWithAnnotation(WSRequestMapping.class);
+		Map<String, Object> beanMap = obtainApplicationContext().getBeansWithAnnotation(ServerEndPoint.class);
 		beanMap.values()
 			.forEach(bean -> {
 				if (!(bean instanceof WebSocketHandler)) {
 					throw new RuntimeException(
-						String.format("Class [%s] doesn't implement WSRequestMapping interface.",
+						String.format("Class [%s] doesn't implement WebSocketHandler interface.",
 							bean.getClass().getName()));
 				}
-				WSRequestMapping annotation = AnnotationUtils.getAnnotation(bean.getClass(), WSRequestMapping.class);
+				ServerEndPoint annotation = AnnotationUtils.getAnnotation(bean.getClass(), ServerEndPoint.class);
 				urlMap.put(Objects.requireNonNull(annotation).value(), (WebSocketHandler) bean);
 			});
 		return new SimpleUrlHandlerMapping(urlMap, Ordered.HIGHEST_PRECEDENCE);

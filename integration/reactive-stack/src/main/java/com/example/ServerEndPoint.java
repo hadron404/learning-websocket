@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Component // 使用spring容器进行管理
-public @interface WSRequestMapping {
+public @interface ServerEndPoint {
 	/**
 	 * path of the websocket endpoint
 	 */
