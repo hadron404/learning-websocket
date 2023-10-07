@@ -1,0 +1,5 @@
+. 自定义 netty 配置属性
+. 编写 NettyServer
+. 编写 ChannelHandler
+. 实现 ApplicationListener 在应用启动时启动Netty容器
+

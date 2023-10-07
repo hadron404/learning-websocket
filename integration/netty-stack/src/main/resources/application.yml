@@ -1,0 +1,6 @@
+netty:
+  port: 12424
+  websocket-path: "/netty"
+  boss-thread: 10
+  worker-thread: 100
+  backlog: 100
