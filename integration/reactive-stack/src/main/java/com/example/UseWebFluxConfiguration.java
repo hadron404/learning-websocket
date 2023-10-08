@@ -34,6 +34,10 @@ public class UseWebFluxConfiguration extends ApplicationObjectSupport {
 	 */
 	@Bean
 	public HandlerMapping annotatedHandlerMapping() {
+		return new SimpleUrlHandlerMapping(getAllWebSocketHandlers(), Ordered.HIGHEST_PRECEDENCE);
+	}
+
+	private Map<String, WebSocketHandler> getAllWebSocketHandlers() {
 		final Map<String, WebSocketHandler> urlMap = new LinkedHashMap<>();
 		Map<String, Object> beanMap = obtainApplicationContext().getBeansWithAnnotation(ServerEndPoint.class);
 		beanMap.values()
@@ -46,6 +50,6 @@ public class UseWebFluxConfiguration extends ApplicationObjectSupport {
 				ServerEndPoint annotation = AnnotationUtils.getAnnotation(bean.getClass(), ServerEndPoint.class);
 				urlMap.put(Objects.requireNonNull(annotation).value(), (WebSocketHandler) bean);
 			});
-		return new SimpleUrlHandlerMapping(urlMap, Ordered.HIGHEST_PRECEDENCE);
+		return urlMap;
 	}
 }
