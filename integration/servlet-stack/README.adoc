@@ -2,6 +2,13 @@
 素材
 
 
+https://www.cnblogs.com/kiwifly/p/11729304.html[Spring boot 集成 websocket 的四种方式 ]
+
+* 原生
+* SpringBoot
+* TIO
+* STOMP
+
 https://docs.spring.io/spring-framework/reference/web/websocket/server.html
 
 * Spring 文档

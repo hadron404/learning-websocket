@@ -6,7 +6,7 @@
 
 * [ ] WebSocket 发展历史及其现状
 . RFC 6455 协议文档
-* [ ] WebSocket 常见实现方案
+* [*] WebSocket 常见实现方案
 . 基于原生 Java 实现
 . 基于 Spring 实现
 . 基于 SpringBoot 实现
@@ -22,14 +22,7 @@
 博客：
 
 
-https://www.baeldung.com/java-enterprise-evolution[Java EE vs J2EE vs Jakarta EE]
-https://blog.csdn.net/zl1zl2zl3/article/details/86030331[【译】Java EE vs J2EE vs Jakarta EE]
 
-https://www.cnblogs.com/kiwifly/p/11729304.html[Spring boot 集成 websocket 的四种方式 ]
-* 原生
-* SpringBoot
-* TIO
-* STOMP
 
 
 https://blog.csdn.net/weixin_33701564/article/details/91762103[高并发测试Websocket脚本]
@@ -43,19 +36,4 @@ https://blog.csdn.net/vicky_lov/article/details/86569981[基于JMeter-WebsocketS
 .. 长时间保持大量连接——创建大量连接、保持连接较长实践
 .. 大量推送消息——可以少量连接较长时间保持，不断触发消息推送
 . 如何使用jmeter-websocketSampler进行性能测试
-
-行业方案：
-
-https://www.infoq.cn/article/3WpGbP2NEvgjzoWZbLHx[爱奇艺：构建通用 WebSocket 推送网关的设计与实践]
-
-. 介绍了爱奇艺号WebSocket使用现状
-. 分析了通用长连接网关在爱奇艺的实现必要性，介绍了设计方案与技术选型分析
-. 介绍了长连接网关系统架构、会话管理、监控与报警以及性能压测
-. 介绍了长连接网关实现后在爱奇艺业务场景应用的案例及效果
-
-
-https://www.infoq.cn/article/9lp0pYfij3bUxmHDXkxl[【译】Slack 的实时消息处理架构]
-https://slack.engineering/real-time-messaging/[Real-time Messaging At Slack]
-
-
 

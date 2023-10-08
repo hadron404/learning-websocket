@@ -12,3 +12,9 @@ https://github.com/rieckpil/blog-tutorials/blob/master/websockets-with-jakarta-e
 
 * 传统部署方案
 * windows 和 linux/macos 下的打包、镜像化、部署
+
+
+
+https://www.baeldung.com/java-enterprise-evolution[Java EE vs J2EE vs Jakarta EE]
+https://blog.csdn.net/zl1zl2zl3/article/details/86030331[【译】Java EE vs J2EE vs Jakarta EE]
+
