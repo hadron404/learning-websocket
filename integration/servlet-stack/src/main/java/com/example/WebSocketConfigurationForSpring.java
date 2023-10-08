@@ -7,13 +7,16 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
+/**
+ * 使用spring封装的websocket实现的配置
+ */
 @Configuration
 @EnableWebSocket
-public class WebSocketConfiguration implements WebSocketConfigurer {
+public class WebSocketConfigurationForSpring implements WebSocketConfigurer {
 
 	@Bean
 	public WebSocketHandler myTextHandler() {
-		return new MyTextHandler();
+		return new UsingSpring();
 	}
 
 	@Override
