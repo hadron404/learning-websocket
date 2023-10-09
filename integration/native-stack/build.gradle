@@ -1,3 +1,14 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+[compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
 dependencies {
     compileOnly 'jakarta.websocket:jakarta.websocket-api:2.1.0'
     compileOnly 'jakarta.websocket:jakarta.websocket-client-api:2.1.0'
