@@ -5,4 +5,8 @@ include 'integration:native-stack'
 include 'integration:servlet-stack'
 include 'integration:reactive-stack'
 include 'integration:netty-stack'
+include 'scenarios:real-time-speech-to-text'
+include 'scenarios:im'
+include 'scenarios:unified-push-gateway'
+include 'scenarios:test'
 
