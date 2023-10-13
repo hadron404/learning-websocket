@@ -1,0 +1,30 @@
+
+1. 实时语音文字转录
+
+
+
+== Speech to text AI 服务商：
+
+=== IBM Watson Speech
+
+https://developer.ibm.com/tutorials/embed-speech-to-text-functions-into-your-java-application/[Embed speech-to-text functions into your Java application]
+
+* Build and run a Java Spring Boot web application that uses IBM Watson Speech to Text as a back-end service
+
+https://github.com/ibm-ecosystem-engineering/Watson-Speech[sample code for use watson-speech ]
+
+* docker 部署方式（可借鉴）
+* k8s 部署方式（可借鉴）
+* 架构图
+
+=== Google Cloud Speech API
+
+
+== 工具和方法
+WebFlux 实现单播和广播
+
+Spring 工具类一览
+
+* UriComponents 和 UriComponentsBuilder
+
+Flux API 详解
