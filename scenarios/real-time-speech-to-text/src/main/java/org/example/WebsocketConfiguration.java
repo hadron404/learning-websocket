@@ -18,7 +18,7 @@ public class WebsocketConfiguration extends ApplicationObjectSupport {
 
 
 	/**
-	 * 基于注解 {@link ServerEndPoint} 自动配置 Websocket Endpoint
+	 * 基于注解 {@link ServerEndpoint} 自动配置 Websocket Endpoint
 	 */
 	@Bean
 	public HandlerMapping annotatedHandlerMapping() {
@@ -27,7 +27,7 @@ public class WebsocketConfiguration extends ApplicationObjectSupport {
 
 	private Map<String, WebSocketHandler> getAllWebSocketHandlers() {
 		final Map<String, WebSocketHandler> urlMap = new LinkedHashMap<>();
-		Map<String, Object> beanMap = obtainApplicationContext().getBeansWithAnnotation(ServerEndPoint.class);
+		Map<String, Object> beanMap = obtainApplicationContext().getBeansWithAnnotation(ServerEndpoint.class);
 		beanMap.values()
 			.forEach(bean -> {
 				if (!(bean instanceof WebSocketHandler)) {
@@ -35,7 +35,7 @@ public class WebsocketConfiguration extends ApplicationObjectSupport {
 						String.format("Class [%s] doesn't implement WebSocketHandler interface.",
 							bean.getClass().getName()));
 				}
-				ServerEndPoint annotation = AnnotationUtils.getAnnotation(bean.getClass(), ServerEndPoint.class);
+				ServerEndpoint annotation = AnnotationUtils.getAnnotation(bean.getClass(), ServerEndpoint.class);
 				urlMap.put(Objects.requireNonNull(annotation).value(), (WebSocketHandler) bean);
 			});
 		return urlMap;

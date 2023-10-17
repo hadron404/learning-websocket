@@ -1,0 +1,7 @@
+#logging:
+#  level:
+#    root: debug
+server:
+  servlet:
+    context-path: /stt
+

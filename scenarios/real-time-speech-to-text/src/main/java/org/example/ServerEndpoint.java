@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Documented
 @Component // 使用spring容器进行管理
-public @interface ServerEndPoint {
+public @interface ServerEndpoint {
 	/**
 	 * path of the websocket endpoint
 	 */

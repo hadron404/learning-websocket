@@ -20,6 +20,10 @@ https://github.com/ibm-ecosystem-engineering/Watson-Speech[sample code for use w
 === Google Cloud Speech API
 
 
+=== Microsoft Azure Speech To Text
+https://azure.microsoft.com/zh-cn/products/ai-services/speech-to-text
+
+
 == 工具和方法
 WebFlux 实现单播和广播
 
@@ -28,3 +32,8 @@ Spring 工具类一览
 * UriComponents 和 UriComponentsBuilder
 
 Flux API 详解
+
+素材
+
+
+https://segmentfault.com/a/1190000022986674[基于WebSocket聊天功能实现]

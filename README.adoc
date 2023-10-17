@@ -37,3 +37,8 @@ https://blog.csdn.net/vicky_lov/article/details/86569981[基于JMeter-WebsocketS
 .. 大量推送消息——可以少量连接较长时间保持，不断触发消息推送
 . 如何使用jmeter-websocketSampler进行性能测试
 
+https://blog.csdn.net/resilient/article/details/85613446[Websocket的九种应用场景]
+
+https://hantsy.github.io/spring-reactive-sample/web/[Spring WebFlux By Example]
+
+* a collection of code snippets and tips of using Spring WebFlux
