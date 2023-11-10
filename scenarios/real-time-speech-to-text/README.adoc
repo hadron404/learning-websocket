@@ -38,3 +38,4 @@ Flux API 详解
 
 https://segmentfault.com/a/1190000022986674[基于WebSocket聊天功能实现]
 https://zhuanlan.zhihu.com/p/595691785 [开源免费离线语音识别 Whisper]
+https://blog.csdn.net/m0_74037076/article/details/127697620[OpenAI Whisper中文语音识别效果尝试和应用]
