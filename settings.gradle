@@ -9,4 +9,4 @@ include 'scenarios:real-time-speech-to-text'
 include 'scenarios:im'
 include 'scenarios:unified-push-gateway'
 include 'scenarios:test'
-
+include 'integration:sse-tech'
