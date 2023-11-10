@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech To Text</title>
+</head>
+<body>
+<h1>Speech To Text</h1>
+选择文件： <input type="file" id="send-pic">
+<button onclick="sendMessage2()">Send</button>
+<ul id='messages2'>
+</ul>
+<script>
+    <!--    连接sst服务系统-->
+    const sstUrl = "ws://localhost:80/ws?ts=xjjkb3d14e40-1b9f-11ee-a0c3-af158877a811out";
+    const ws2 = new WebSocket(sstUrl);
+    ws2.onopen = function (ev) {
+
+    };
+    function sendMessage2() {
+        var input = document.getElementById("send-pic")
+        var files = input.files;
+        if (files && files.length) {
+            var file = files[0];
+            var fileReader = new FileReader();
+            fileReader.readAsArrayBuffer(file);
+            fileReader.onload = function (e) {
+                // 获取到文件对象
+                var result = e.target.result;
+                // 发送数据到服务器端
+                ws2.send(result)
+            }
+        }
+    }
+</script>
+</body>
+</html>

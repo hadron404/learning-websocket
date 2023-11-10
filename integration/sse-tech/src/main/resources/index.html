@@ -6,42 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSE Demo</title>
 </head>
+
+<style>
+    /*这里是闪烁光标*/
+    .cursor.blink {
+        animation: blink 1s infinite steps(1, start);
+    }
+    /*这里设置动画blink*/
+    @keyframes blink {
+        0%, 100% {
+            background-color: #000;
+            color: #aaa;
+        }
+        50% {
+            background-color: #bbb; /* not #aaa because it's seem there is Google Chrome bug */
+            color: #000;
+        }
+    }
+</style>
 <body>
 <h1>SSE Demo</h1>
 <button onclick="connectSSE()">建立 SSE 连接</button>
 <button onclick="closeSSE()">断开 SSE 连接</button>
 <br />
 <br />
+<div id="state"></div>
 <div id="message"></div>
-
+<div class="cursor blink">
+    <span class="blink"></span>
+</div>
 <script>
-    const messageElement = document.getElementById('message')
+    const stateElement = document.getElementById('state');
+
+    const messageElement = document.getElementById('message');
 
     let eventSource
 
     // 建立 SSE 连接
     const connectSSE = () => {
-        eventSource = new EventSource('http://127.0.0.1:8080/stream-sse-mvc')
+        eventSource = new EventSource('http://localhost:8080/stream-sse')
 
         // 监听消息事件
-        eventSource.addEventListener('customEvent', (event) => {
-            const data = JSON.parse(event.data)
-            messageElement.innerHTML += `${data.id} --- ${data.time} --- params参数：${JSON.stringify(data.params)}` + '<br />'
+        eventSource.addEventListener('periodic-event', (event) => {
+            // console.log(event);
+            messageElement.innerText += event.data;
         })
 
         eventSource.onopen = () => {
-            messageElement.innerHTML += `SSE 连接成功，状态${eventSource.readyState}<br />`
+            stateElement.innerHTML += `SSE 连接成功，状态${eventSource.readyState}<br />`
         }
 
         eventSource.onerror = () => {
-            messageElement.innerHTML += `SSE 连接错误，状态${eventSource.readyState}<br />`
+            stateElement.innerHTML += `SSE 连接错误，状态${eventSource.readyState}<br />`
         }
     }
 
     // 断开 SSE 连接
     const closeSSE = () => {
         eventSource.close()
-        messageElement.innerHTML += `SSE 连接关闭，状态${eventSource.readyState}<br />`
+        stateElement.innerHTML += `SSE 连接关闭，状态${eventSource.readyState}<br />`
     }
 </script>
 </body>

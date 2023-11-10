@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+<h1>WebSocket Chat2</h1>
+选择文件： <input type="file" id="send-pic">
+<button onclick="sendMessage2(event)">Send</button>
+<ul id='messages2'>
+</ul>
+<script>
+    // 连接业务系统
+    var ws2 = new WebSocket("ws://127.0.0.1:12424/ws?callid=e9565c50-1f90-11ee-af8f-957e650d4cc0&type=1");
+    ws2.onopen = function (ev) {
+
+    };
+    function sendMessage2(event) {
+        console.log(event);
+        var input = document.getElementById("send-pic")
+        console.log(input);
+        var files = input.files;
+        console.log(files);
+        if (files && files.length) {
+            var file = files[0];
+            var fileReader = new FileReader();
+            fileReader.readAsArrayBuffer(file);
+            fileReader.onload = function (e) {
+                // 获取到文件对象
+                var result = e.target.result;
+                // 发送数据到服务器端
+                ws2.send(result)
+            }
+        }
+    }
+</script>
+</body>
+</html>

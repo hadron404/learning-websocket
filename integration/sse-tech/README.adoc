@@ -1,2 +1,3 @@
 https://ably.com/blog/websockets-vs-sse
 https://www.baeldung.com/spring-server-sent-events
+https://juejin.cn/post/7221125237500330039#heading-15
