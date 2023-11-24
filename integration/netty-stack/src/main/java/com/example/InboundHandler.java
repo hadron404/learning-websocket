@@ -3,6 +3,9 @@ package com.example;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
+import org.springframework.web.socket.PingMessage;
 
 public class InboundHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 	@Override
@@ -12,5 +15,17 @@ public class InboundHandler extends SimpleChannelInboundHandler<TextWebSocketFra
 		System.out.println(InboundHandler.class + "收到客户端发送来的消息:  " + text);
 		// 将消息发送到下一个handler，按照Initializer注册顺序
 		ctx.fireChannelRead(msg);
+	}
+
+	@Override
+	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+		if (evt instanceof IdleStateEvent) {
+			IdleStateEvent e = (IdleStateEvent) evt;
+			if (e.state() == IdleState.READER_IDLE) {
+				ctx.close();
+			} else if (e.state() == IdleState.WRITER_IDLE) {
+				ctx.writeAndFlush(new PingMessage());
+			}
+		}
 	}
 }

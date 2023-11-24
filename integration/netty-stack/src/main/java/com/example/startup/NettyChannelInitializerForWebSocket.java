@@ -13,7 +13,7 @@ import io.netty.handler.timeout.IdleStateHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChannel> {
+public class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChannel> {
 
 	private final NettyConfigProperties nettyConfig;
 
@@ -32,7 +32,7 @@ class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChann
 			.addLast(new ChunkedWriteHandler())
 			//添加聚合器
 			.addLast(new HttpObjectAggregator(1024 * 64))
-			.addLast(new IdleStateHandler(5, -1, -1))
+			.addLast(new IdleStateHandler(10, 5, -1))
 			//设置websocket连接前缀前缀
 			.addLast(new WebSocketServerProtocolHandler(this.nettyConfig.getWebsocketPath()))
 			//添加自定义处理器 两个相同的handler类无法同时生效

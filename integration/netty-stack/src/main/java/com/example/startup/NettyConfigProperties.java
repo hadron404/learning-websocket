@@ -10,7 +10,7 @@ public class NettyConfigProperties {
 	/**
 	 * Websocket服务端口
 	 */
-	int port;
+	private int port;
 	/**
 	 * boss线程数量 默认为cpu线程数*4
 	 */
