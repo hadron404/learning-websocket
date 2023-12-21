@@ -45,18 +45,18 @@ public class SSEApplication {
 				.data("SSE - " + LocalTime.now().toString())
 				.build());
 	}
-
+	private final ExecutorService nonBlockingService = Executors
+		.newCachedThreadPool();
 	@GetMapping("/stream-sse-mvc")
 	public SseEmitter streamSseMvc() {
 		SseEmitter emitter = new SseEmitter();
-		ExecutorService sseMvcExecutor = Executors.newSingleThreadExecutor();
-		sseMvcExecutor.execute(() -> {
+		nonBlockingService.execute(() -> {
 			try {
 				for (int i = 0; true; i++) {
 					SseEmitter.SseEventBuilder event = SseEmitter.event()
-						.data("SSE MVC - " + LocalTime.now().toString())
+						.data("SSE MVC - " + LocalTime.now())
 						.id(String.valueOf(i))
-						.name("sse event - mvc");
+						.name("pong");
 					emitter.send(event);
 					Thread.sleep(1000);
 				}

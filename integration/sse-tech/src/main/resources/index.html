@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,7 @@
     .cursor.blink {
         animation: blink 1s infinite steps(1, start);
     }
+
     /*这里设置动画blink*/
     @keyframes blink {
         0%, 100% {
@@ -28,8 +29,8 @@
 <h1>SSE Demo</h1>
 <button onclick="connectSSE()">建立 SSE 连接</button>
 <button onclick="closeSSE()">断开 SSE 连接</button>
-<br />
-<br />
+<br/>
+<br/>
 <div id="state"></div>
 <div id="message"></div>
 <div class="cursor blink">
@@ -44,21 +45,57 @@
 
     // 建立 SSE 连接
     const connectSSE = () => {
-        eventSource = new EventSource('http://localhost:8080/stream-sse')
-
-        // 监听消息事件
-        eventSource.addEventListener('periodic-event', (event) => {
-            // console.log(event);
-            messageElement.innerText += event.data;
-        })
-
+        // let headers = new Headers();
+        // <!--headers.append('Authorization', 'Bearer ' + yourToken);-->
+        // headers.append('Accept', 'text/event-stream');
+        // fetch('http://127.0.0.1/websocket/message/stream/123', {headers: headers, mode: 'no-cors'})
+        //     .then(response => {
+        //         const reader = response.body.getReader();
+        //         const stream = new ReadableStream({
+        //             start(controller) {
+        //                 function push() {
+        //                     reader.read().then(({done, value}) => {
+        //                         if (done) {
+        //                             controller.close();
+        //                             return;
+        //                         }
+        //                         controller.enqueue(value);
+        //                         push();
+        //                     });
+        //                 }
+        //
+        //                 push();
+        //             }
+        //         });
+        //         return new Response(stream, {headers: {'Content-Type': 'text/html'}});
+        //     })
+        //     .then(response => {
+        //         return new TextDecoder().decode(response.body);
+        //     })
+        //     .then(result => console.log(result))
+        //     .catch(err => console.log(err));
+        // https://github.com/Azure/fetch-event-source
+        eventSource = new EventSource('http://127.0.0.1:80/stream-sse-mvc');
         eventSource.onopen = () => {
             stateElement.innerHTML += `SSE 连接成功，状态${eventSource.readyState}<br />`
         }
-
         eventSource.onerror = () => {
             stateElement.innerHTML += `SSE 连接错误，状态${eventSource.readyState}<br />`
-        }
+        };
+        eventSource.addEventListener('pong', (event) => {
+            console.log(event);
+            messageElement.innerText += event.data;
+        });
+        // 监听消息事件
+        eventSource.addEventListener('in-event', (event) => {
+            // console.log(event);
+            messageElement.innerText += event.data;
+        });
+        // 监听消息事件
+        eventSource.addEventListener('out-event', (event) => {
+            // console.log(event);
+            messageElement.innerText += event.data;
+        });
     }
 
     // 断开 SSE 连接
