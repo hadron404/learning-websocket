@@ -75,7 +75,7 @@
         //     .then(result => console.log(result))
         //     .catch(err => console.log(err));
         // https://github.com/Azure/fetch-event-source
-        eventSource = new EventSource('http://127.0.0.1:80/stream-sse-mvc');
+        eventSource = new EventSource('https://gw.test.xjjk.com/websocket/message/stream/123');
         eventSource.onopen = () => {
             stateElement.innerHTML += `SSE 连接成功，状态${eventSource.readyState}<br />`
         }
