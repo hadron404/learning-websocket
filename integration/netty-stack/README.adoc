@@ -9,3 +9,8 @@ https://juejin.cn/post/7030777971472826404[Springboot 整合 Netty 实现 Websoc
 
 
 https://blog.csdn.net/ooaash/article/details/118186450[Springboot 整合 Netty 实现 Websocket 应用]
+
+https://blog.csdn.net/fengyuyeguirenenen/article/details/124332507[Netty 心跳机制]
+
+
+https://blog.csdn.net/iaoyou1/article/details/111239512[实现 Netty websocket客户端]
