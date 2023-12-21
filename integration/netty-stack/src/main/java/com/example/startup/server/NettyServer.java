@@ -1,4 +1,4 @@
-package com.example.startup;
+package com.example.startup.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.nio.NioEventLoopGroup;

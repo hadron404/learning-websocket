@@ -1,4 +1,4 @@
-package com.example.startup;
+package com.example.startup.server;
 
 import com.example.InboundAndOutBoundHandler;
 import com.example.InboundHandler;

@@ -1,4 +1,4 @@
-package com.example.startup;
+package com.example.startup.server;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

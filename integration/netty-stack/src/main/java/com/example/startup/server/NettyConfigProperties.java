@@ -1,4 +1,4 @@
-package com.example.startup;
+package com.example.startup.server;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
