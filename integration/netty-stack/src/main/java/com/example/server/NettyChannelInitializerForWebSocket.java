@@ -1,7 +1,7 @@
-package com.example.startup.server;
+package com.example.server;
 
-import com.example.InboundAndOutBoundHandler;
-import com.example.InboundHandler;
+import com.example.server.handler.InboundAndOutBoundHandler;
+import com.example.server.handler.InboundHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -13,7 +13,7 @@ import io.netty.handler.timeout.IdleStateHandler;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChannel> {
+class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChannel> {
 
 	private final NettyConfigProperties nettyConfig;
 

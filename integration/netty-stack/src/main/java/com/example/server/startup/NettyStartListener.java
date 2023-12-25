@@ -1,5 +1,6 @@
-package com.example.startup.server;
+package com.example.server.startup;
 
+import com.example.server.NettyServer;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 // 了解 ApplicationListener 的作用
-public class NettyStartListener implements ApplicationListener<ContextRefreshedEvent> {
+class NettyStartListener implements ApplicationListener<ContextRefreshedEvent> {
 
 	private final NettyServer nettyServer;
 

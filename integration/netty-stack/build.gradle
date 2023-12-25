@@ -16,8 +16,13 @@ apply plugin: 'io.spring.dependency-management'
 
 dependencies {
 
+
 //  使用 netty 框架
     implementation 'io.netty:netty-all:4.1.97.Final'
+//    lombok 支持
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
+
 //  自定义 application.yml 配置
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     implementation 'org.springframework.boot:spring-boot-starter'

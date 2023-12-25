@@ -1,4 +1,4 @@
-package com.example.startup.client;
+package com.example.client;
 
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;

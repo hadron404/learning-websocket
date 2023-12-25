@@ -1,11 +1,13 @@
-package com.example.startup.server;
+package com.example.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class NettyServer {
 
 	private final NettyConfigProperties nettyConfig;
@@ -16,7 +18,7 @@ public class NettyServer {
 	private final NettyChannelInitializerForWebSocket websocketChannelInitializer;
 
 
-	public NettyServer(NettyConfigProperties nettyConfig,
+	NettyServer(NettyConfigProperties nettyConfig,
 		NettyChannelInitializerForWebSocket websocketChannelInitializer) {
 		this.nettyConfig = nettyConfig;
 		this.websocketChannelInitializer = websocketChannelInitializer;
@@ -25,7 +27,7 @@ public class NettyServer {
 	}
 
 	public void start() throws InterruptedException {
-		System.out.println(NettyServer.class + " 启动正在监听：" + nettyConfig.getPort());
+		log.info("Websocket服务端启动中，正在监听：{}", this.nettyConfig.getPort());
 		// 主线程池
 		NioEventLoopGroup bossGroup = new NioEventLoopGroup();
 		// 从线程池

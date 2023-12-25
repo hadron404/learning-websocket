@@ -1,4 +1,4 @@
-package com.example.startup.client;
+package com.example.client;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -7,7 +7,7 @@ import io.netty.handler.codec.http.HttpClientCodec;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.websocketx.extensions.compression.WebSocketClientCompressionHandler;
 
-public class ChannelInitializerForWebsocketClient extends ChannelInitializer<SocketChannel> {
+class ChannelInitializerForWebsocketClient extends ChannelInitializer<SocketChannel> {
 	private final WebsocketClientHandler handler;
 
 	public ChannelInitializerForWebsocketClient(WebsocketClientHandler handler) {

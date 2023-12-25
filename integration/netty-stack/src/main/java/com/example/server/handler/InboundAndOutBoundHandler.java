@@ -1,4 +1,4 @@
-package com.example;
+package com.example.server.handler;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -7,7 +7,9 @@ import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class InboundAndOutBoundHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
 	private static final ChannelGroup CLIENTS = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
@@ -15,7 +17,7 @@ public class InboundAndOutBoundHandler extends SimpleChannelInboundHandler<TextW
 
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
-		System.out.println(InboundAndOutBoundHandler.class + "收到客户端发送来的消息:  " + msg.text());
+		log.info("收到客户端发送来的消息: {} ", msg.text());
 		//遍历出所有连接的通道
 		for (Channel channel : CLIENTS) {
 			//推送给所有的通道

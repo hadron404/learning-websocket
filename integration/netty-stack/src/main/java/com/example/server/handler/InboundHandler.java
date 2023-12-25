@@ -1,17 +1,19 @@
-package com.example;
+package com.example.server.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.socket.PingMessage;
 
+@Slf4j
 public class InboundHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
 		//获取客户端发送的消息内容
-		System.out.println(InboundHandler.class + "收到客户端发送来的消息:  " + msg);
+		log.info("收到客户端发送来的消息: {} ", msg);
 		msg.content().retain();
 		// 将消息发送到下一个handler，按照Initializer注册顺序
 		ctx.fireChannelRead(msg);

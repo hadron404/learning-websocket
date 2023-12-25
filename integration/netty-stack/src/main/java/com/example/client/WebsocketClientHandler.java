@@ -1,4 +1,4 @@
-package com.example.startup.client;
+package com.example.client;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.http.FullHttpResponse;
@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class WebsocketClientHandler extends SimpleChannelInboundHandler<Object> {
+class WebsocketClientHandler extends SimpleChannelInboundHandler<Object> {
 	private static final Logger log = LoggerFactory.getLogger(WebsocketClientHandler.class);
 	/**
 	 * 连接处理器

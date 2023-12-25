@@ -1,8 +1,5 @@
 package com.example.client;
 
-import com.example.startup.client.AbstractWebsocketClient;
-import com.example.startup.client.ChannelInitializerForWebsocketClient;
-import com.example.startup.client.WebsocketClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.nio.NioEventLoopGroup;
