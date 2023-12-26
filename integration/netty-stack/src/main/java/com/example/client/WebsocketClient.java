@@ -8,15 +8,13 @@ import io.netty.handler.codec.http.DefaultHttpHeaders;
 import io.netty.handler.codec.http.websocketx.WebSocketClientHandshaker;
 import io.netty.handler.codec.http.websocketx.WebSocketClientHandshakerFactory;
 import io.netty.handler.codec.http.websocketx.WebSocketVersion;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
+@Slf4j
 public class WebsocketClient extends AbstractWebsocketClient {
-
-	private static final Logger log = LoggerFactory.getLogger(WebsocketClient.class);
 
 	private static final NioEventLoopGroup NIO_GROUP = new NioEventLoopGroup();
 
@@ -66,7 +64,9 @@ public class WebsocketClient extends AbstractWebsocketClient {
 		// client端，引导client channel启动
 		bootstrap = new Bootstrap();
 		// 添加管道 绑定端口 添加作用域等
-		bootstrap.group(NIO_GROUP).channel(NioSocketChannel.class).handler(new ChannelInitializerForWebsocketClient(handler));
+		bootstrap.group(NIO_GROUP)
+			.channel(NioSocketChannel.class)
+			.handler(new ChannelInitializerForWebsocketClient(handler));
 	}
 
 	@Override

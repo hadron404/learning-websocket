@@ -1,19 +1,21 @@
-package com.example.server.startup;
+package com.example.server;
 
-import com.example.server.NettyServer;
+import com.example.server.config.WebsocketServer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 
-@Component
 // 了解 ApplicationListener 的作用
-class NettyStartListener implements ApplicationListener<ContextRefreshedEvent> {
+@Slf4j
+@Component
+class ServerStarter implements ApplicationListener<ContextRefreshedEvent> {
 
-	private final NettyServer nettyServer;
+	private final WebsocketServer websocketServer;
 
-	public NettyStartListener(NettyServer nettyServer) {
-		this.nettyServer = nettyServer;
+	public ServerStarter() {
+		this.websocketServer = new WebsocketServer();
 	}
 
 	@Override
@@ -22,9 +24,9 @@ class NettyStartListener implements ApplicationListener<ContextRefreshedEvent> {
 		if (event.getApplicationContext().getParent() == null) {
 			try {
 				//为空则调用start方法
-				this.nettyServer.start();
+				this.websocketServer.doStart();
 			} catch (Exception e) {
-				e.printStackTrace();
+				log.error("服务端启动失败", e);
 			}
 		}
 	}

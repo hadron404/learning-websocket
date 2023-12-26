@@ -17,9 +17,10 @@ class ChannelInitializerForWebsocketClient extends ChannelInitializer<SocketChan
 	@Override
 	protected void initChannel(SocketChannel ch) {
 		ChannelPipeline p = ch.pipeline();
-		p.addLast(new HttpClientCodec());
-		p.addLast(new HttpObjectAggregator(8192));
-		p.addLast(WebSocketClientCompressionHandler.INSTANCE);
-		p.addLast(handler);
+		p
+			.addLast(new HttpClientCodec())
+			.addLast(new HttpObjectAggregator(8192))
+			.addLast(WebSocketClientCompressionHandler.INSTANCE)
+			.addLast(handler);
 	}
 }

@@ -1,21 +1,32 @@
 package com.example.client;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
+import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import io.netty.handler.codec.http.websocketx.WebSocketFrame;
 
 import java.io.Closeable;
 
-public abstract class AbstractWebsocketClient implements Closeable {
+abstract class AbstractWebsocketClient implements Closeable {
 
 	/**
 	 * 发送消息.<br>
 	 *
 	 * @param message 发送文本
 	 */
-	public void send(String message) throws RuntimeException {
+	public void sendText(String message) throws RuntimeException {
+		this.send(new TextWebSocketFrame(message));
+	}
+
+	public void sendBinary(ByteBuf byteBuf) {
+		this.send(new BinaryWebSocketFrame(byteBuf.retain()));
+	}
+
+	public void send(WebSocketFrame frame) throws RuntimeException {
 		Channel channel = getChannel();
 		if (channel != null) {
-			channel.writeAndFlush(new TextWebSocketFrame(message));
+			channel.writeAndFlush(frame);
 			return;
 		}
 		throw new RuntimeException("连接已经关闭");

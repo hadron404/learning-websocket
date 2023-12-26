@@ -1,4 +1,4 @@
-package com.example.server;
+package com.example.server.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 @ConfigurationProperties(prefix = "netty")
-class NettyConfigProperties {
+class ServerConfigProperties {
 
 	/**
 	 * Websocket服务端口

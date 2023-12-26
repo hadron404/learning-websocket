@@ -1,33 +1,28 @@
-package com.example.server;
+package com.example.server.config;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
-@Component
 @Slf4j
-public class NettyServer {
+public class WebsocketServer {
 
-	private final NettyConfigProperties nettyConfig;
 	/**
 	 * Netty服务器启动对象
 	 */
 	private final ServerBootstrap serverBootstrap;
-	private final NettyChannelInitializerForWebSocket websocketChannelInitializer;
+	private final ChannelInitializerForWebSocketServer websocketChannelInitializer;
 
 
-	NettyServer(NettyConfigProperties nettyConfig,
-		NettyChannelInitializerForWebSocket websocketChannelInitializer) {
-		this.nettyConfig = nettyConfig;
-		this.websocketChannelInitializer = websocketChannelInitializer;
+	public WebsocketServer() {
+		this.websocketChannelInitializer = new ChannelInitializerForWebSocketServer();
 		// 初始化服务器启动对象
 		this.serverBootstrap = new ServerBootstrap();
 	}
 
-	public void start() throws InterruptedException {
-		log.info("Websocket服务端启动中，正在监听：{}", this.nettyConfig.getPort());
+	public void doStart() throws InterruptedException {
+		log.info("Websocket服务端启动中，正在监听：{}", this.websocketChannelInitializer.port());
 		// 主线程池
 		NioEventLoopGroup bossGroup = new NioEventLoopGroup();
 		// 从线程池
@@ -35,7 +30,7 @@ public class NettyServer {
 		this.serverBootstrap
 			// 指定使用上面创建的两个线程池
 			.group(bossGroup, workerGroup)
-			.localAddress(this.nettyConfig.getPort())
+			.localAddress(this.websocketChannelInitializer.port())
 			// 指定Netty通道类型
 			.channel(NioServerSocketChannel.class)
 			// 指定通道初始化器用来加载当Channel收到事件消息后

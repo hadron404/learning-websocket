@@ -1,5 +1,6 @@
-package com.example.server;
+package com.example.server.config;
 
+import com.example.common.ApplicationContextUtils;
 import com.example.server.handler.InboundAndOutBoundHandler;
 import com.example.server.handler.InboundHandler;
 import io.netty.channel.ChannelInitializer;
@@ -10,15 +11,13 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import io.netty.handler.timeout.IdleStateHandler;
-import org.springframework.stereotype.Component;
 
-@Component
-class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChannel> {
+class ChannelInitializerForWebSocketServer extends ChannelInitializer<SocketChannel> {
 
-	private final NettyConfigProperties nettyConfig;
+	private final ServerConfigProperties nettyConfig;
 
-	public NettyChannelInitializerForWebSocket(NettyConfigProperties nettyConfig) {
-		this.nettyConfig = nettyConfig;
+	ChannelInitializerForWebSocketServer() {
+		this.nettyConfig = ApplicationContextUtils.getBean(ServerConfigProperties.class);
 	}
 
 	@Override
@@ -39,5 +38,9 @@ class NettyChannelInitializerForWebSocket extends ChannelInitializer<SocketChann
 			.addLast(new InboundHandler())
 			.addLast(new InboundAndOutBoundHandler())
 		;
+	}
+
+	int port() {
+		return this.nettyConfig.getPort();
 	}
 }
