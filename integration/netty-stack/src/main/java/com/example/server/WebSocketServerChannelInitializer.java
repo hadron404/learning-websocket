@@ -1,8 +1,9 @@
-package com.example.server.config;
+package com.example.server;
 
 import com.example.common.ApplicationContextUtils;
 import com.example.server.handler.InboundAndOutBoundHandler;
 import com.example.server.handler.InboundHandler;
+import com.example.server.handler.WebsocketFrameHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -12,12 +13,12 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 
-class ChannelInitializerForWebSocketServer extends ChannelInitializer<SocketChannel> {
+class WebSocketServerChannelInitializer extends ChannelInitializer<SocketChannel> {
 
-	private final ServerConfigProperties nettyConfig;
+	private final WebsocketServerProperties nettyConfig;
 
-	ChannelInitializerForWebSocketServer() {
-		this.nettyConfig = ApplicationContextUtils.getBean(ServerConfigProperties.class);
+	WebSocketServerChannelInitializer() {
+		this.nettyConfig = ApplicationContextUtils.getBean(WebsocketServerProperties.class);
 	}
 
 	@Override
@@ -35,8 +36,7 @@ class ChannelInitializerForWebSocketServer extends ChannelInitializer<SocketChan
 			//设置websocket连接前缀前缀
 			.addLast(new WebSocketServerProtocolHandler(this.nettyConfig.getWebsocketPath()))
 			//添加自定义处理器 两个相同的handler类无法同时生效
-			.addLast(new InboundHandler())
-			.addLast(new InboundAndOutBoundHandler())
+			.addLast(new WebsocketFrameHandler())
 		;
 	}
 

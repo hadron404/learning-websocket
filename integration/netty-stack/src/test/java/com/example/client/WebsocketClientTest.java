@@ -10,8 +10,8 @@ class WebsocketClientTest {
 	@Test
 	void name() {
 		Assertions.assertDoesNotThrow(() -> {
-			try (WebsocketClient websocketClient =
-					 new WebsocketClient("ws://localhost:12424/netty")) {
+			try (DefaultWebsocketClient websocketClient =
+					 new DefaultWebsocketClient("ws://localhost:12424/netty")) {
 				// 连接
 				websocketClient.connect();
 				// 发送消息

@@ -14,7 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @Slf4j
-public class WebsocketClient extends AbstractWebsocketClient {
+public class DefaultWebsocketClient extends AbstractWebsocketClient {
 
 	private static final NioEventLoopGroup NIO_GROUP = new NioEventLoopGroup();
 
@@ -28,7 +28,7 @@ public class WebsocketClient extends AbstractWebsocketClient {
 
 	private Channel channel;
 
-	public WebsocketClient(String url) throws URISyntaxException, RuntimeException {
+	public DefaultWebsocketClient(String url) throws URISyntaxException, RuntimeException {
 		super();
 		this.uri = new URI(url);
 		this.port = getPort();
@@ -66,7 +66,7 @@ public class WebsocketClient extends AbstractWebsocketClient {
 		// 添加管道 绑定端口 添加作用域等
 		bootstrap.group(NIO_GROUP)
 			.channel(NioSocketChannel.class)
-			.handler(new ChannelInitializerForWebsocketClient(handler));
+			.handler(new WebsocketClientChannelInitializer(handler));
 	}
 
 	@Override

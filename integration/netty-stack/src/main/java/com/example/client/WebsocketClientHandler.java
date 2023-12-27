@@ -4,12 +4,12 @@ import io.netty.channel.*;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import jakarta.annotation.Nonnull;
+import lombok.extern.slf4j.Slf4j;
 
 
+@Slf4j
 class WebsocketClientHandler extends SimpleChannelInboundHandler<Object> {
-	private static final Logger log = LoggerFactory.getLogger(WebsocketClientHandler.class);
 	/**
 	 * 连接处理器
 	 */
@@ -73,7 +73,7 @@ class WebsocketClientHandler extends SimpleChannelInboundHandler<Object> {
 	 * @param ctx ChannelHandlerContext
 	 */
 	@Override
-	public void channelInactive(@SuppressWarnings("NullableProblems") ChannelHandlerContext ctx) {
+	public void channelInactive(@Nonnull ChannelHandlerContext ctx) {
 		log.info("channelInactive");
 	}
 

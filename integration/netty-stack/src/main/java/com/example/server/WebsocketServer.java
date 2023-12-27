@@ -1,4 +1,4 @@
-package com.example.server.config;
+package com.example.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -6,17 +6,17 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class WebsocketServer {
+class WebsocketServer {
 
 	/**
 	 * Netty服务器启动对象
 	 */
 	private final ServerBootstrap serverBootstrap;
-	private final ChannelInitializerForWebSocketServer websocketChannelInitializer;
+	private final WebSocketServerChannelInitializer websocketChannelInitializer;
 
 
 	public WebsocketServer() {
-		this.websocketChannelInitializer = new ChannelInitializerForWebSocketServer();
+		this.websocketChannelInitializer = new WebSocketServerChannelInitializer();
 		// 初始化服务器启动对象
 		this.serverBootstrap = new ServerBootstrap();
 	}

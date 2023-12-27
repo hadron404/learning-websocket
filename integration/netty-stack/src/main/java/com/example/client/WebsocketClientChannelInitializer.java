@@ -7,10 +7,10 @@ import io.netty.handler.codec.http.HttpClientCodec;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.websocketx.extensions.compression.WebSocketClientCompressionHandler;
 
-class ChannelInitializerForWebsocketClient extends ChannelInitializer<SocketChannel> {
+class WebsocketClientChannelInitializer extends ChannelInitializer<SocketChannel> {
 	private final WebsocketClientHandler handler;
 
-	public ChannelInitializerForWebsocketClient(WebsocketClientHandler handler) {
+	public WebsocketClientChannelInitializer(WebsocketClientHandler handler) {
 		this.handler = handler;
 	}
 
