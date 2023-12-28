@@ -4,9 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
-import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
-import io.netty.handler.codec.http.websocketx.WebSocketFrame;
+import io.netty.handler.codec.http.websocketx.*;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import org.springframework.web.socket.PingMessage;
@@ -17,14 +15,20 @@ public class WebsocketFrameHandler extends SimpleChannelInboundHandler<WebSocket
 	protected void channelRead0(ChannelHandlerContext ctx, WebSocketFrame frame) {
 		if (frame instanceof TextWebSocketFrame textFrame) {
 			// Handle text messages
-            String text = textFrame.text();
+			String text = textFrame.text();
 			// Process the text message and send a response, if necessary
 		} else if (frame instanceof BinaryWebSocketFrame binaryFrame) {
 			// Handle binary messages
-            ByteBuf content = binaryFrame.content();
+			ByteBuf content = binaryFrame.content();
 			// Process the binary data and send a response, if necessary
+		} else if (frame instanceof PingWebSocketFrame pingFrame) {
+			// Handle ping messages
+		} else if (frame instanceof PongWebSocketFrame pongFrame) {
+			// Handle pong messages
+		} else if (frame instanceof CloseWebSocketFrame closeFrame) {
+			// Handle close messages
 		} else {
-			// Other frame types (CloseWebSocketFrame, PingWebSocketFrame, PongWebSocketFrame) can be handled here
+			// Other frame types an be handled here
 		}
 	}
 
