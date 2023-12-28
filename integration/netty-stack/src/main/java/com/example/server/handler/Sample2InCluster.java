@@ -9,8 +9,11 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 集群中主动向所有客户端发送消息
+ */
 @Slf4j
-public class InboundAndOutBoundHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
+public class Sample2InCluster extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
 	private static final ChannelGroup CLIENTS = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
